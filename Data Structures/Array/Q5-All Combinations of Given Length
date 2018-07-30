@@ -1,0 +1,11 @@
+var output = [];
+function ArrayCombination(arr, length, index, currLength, item){
+    if(currLength === length){
+        output.push(item);
+    }
+    for(let i=index; i < arr.length; i++){
+        ArrayCombination(arr, length, i+1, currLength+1, item+arr[i]);
+    }
+}
+ArrayCombination([1,2,3,4], 2, 0, 0, '');
+console.log(output);
